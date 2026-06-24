@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-28 md:py-32">
       {/* Animated Background */}
       <div className="absolute inset-0 animated-grid opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
@@ -37,7 +37,7 @@ export default function Hero() {
 
       {/* Gradient Orb */}
       <motion.div
-        className="absolute right-1/4 top-1/4 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[120px]"
+        className="absolute right-1/4 top-1/4 w-[320px] h-[320px] md:w-[420px] md:h-[420px] rounded-full bg-accent/20 blur-[110px]"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -50,13 +50,13 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="w-full max-w-5xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-12 items-center">
           {/* Left Side */}
-          <div className="space-y-8">
+          <div className="space-y-5 md:space-y-6">
             <Reveal>
               <motion.h1
-                className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -70,18 +70,18 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="text-xl md:text-2xl text-text-secondary max-w-2xl leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-text-secondary max-w-lg leading-relaxed">
                 Software Engineering Intern at Cisco Systems specializing in AI/ML, backend development, and competitive programming.
               </p>
             </Reveal>
 
             <Reveal delay={0.4}>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <Link href="/projects">
-                  <MagneticButton>View Projects</MagneticButton>
+                  <MagneticButton size="sm">View Projects</MagneticButton>
                 </Link>
                 <Link href="/contact">
-                  <MagneticButton className="bg-card-hover hover:bg-card border border-border">
+                  <MagneticButton size="sm" className="bg-card-hover hover:bg-card border border-border">
                     Contact Me
                   </MagneticButton>
                 </Link>
@@ -94,7 +94,7 @@ export default function Hero() {
             <div className="relative">
               {/* Profile Image */}
               <motion.div
-                className="relative w-full aspect-square max-w-lg mx-auto"
+                className="relative w-full aspect-square max-w-[13rem] sm:max-w-[16rem] md:max-w-[18rem] lg:max-w-[21rem] mx-auto"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.6 }}
@@ -124,21 +124,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.8 }}
-      >
-        <motion.div
-          className="w-6 h-10 border-2 border-accent/50 rounded-full flex items-start justify-center p-2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <motion.div className="w-1 h-2 bg-accent rounded-full" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

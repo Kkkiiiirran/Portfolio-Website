@@ -15,7 +15,7 @@ interface ProjectDetailClientProps {
 export default function ProjectDetailClient({ project }: ProjectDetailClientProps) {
   return (
     <div className="pt-32 pb-20">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
         {/* Back Button */}
         <Reveal>
           <Link href="/projects">
@@ -40,10 +40,10 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                   </span>
                   <span className="text-text-secondary text-sm">{project.duration}</span>
                 </div>
-                <h1 className="text-4xl md:text-6xl font-heading font-bold gradient-text mb-4">
+                <h1 className="page-title">
                   {project.title}
                 </h1>
-                <p className="text-xl text-text-secondary">{project.description}</p>
+                <p className="page-subtitle mx-0 max-w-2xl">{project.description}</p>
               </div>
               <div className="flex gap-3">
                 {project.githubUrl && (
@@ -64,12 +64,20 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
 
           {/* Hero Image Placeholder */}
           <Reveal delay={0.2}>
-            <div className="aspect-video rounded-2xl bg-gradient-to-br from-accent/20 to-purple-600/20 border border-border overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center">
-                <span className="text-9xl font-heading font-bold text-white/5">
-                  {project.title.charAt(0)}
-                </span>
-              </div>
+            <div className="media-frame max-w-4xl mx-auto">
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-9xl font-heading font-bold text-white/5">
+                    {project.title.charAt(0)}
+                  </span>
+                </div>
+              )}
             </div>
           </Reveal>
         </div>

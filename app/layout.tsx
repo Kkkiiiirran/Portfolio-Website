@@ -3,7 +3,6 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import CustomCursor from "@/components/animations/CustomCursor";
 import PageLoader from "@/components/animations/PageLoader";
 import SmoothScroll from "@/components/animations/SmoothScroll";
 import ScrollProgress from "@/components/animations/ScrollProgress";
@@ -45,7 +44,6 @@ export default function RootLayout({
         <ThemeProvider>
           <BackgroundEffects />
           <PageLoader />
-          <CustomCursor />
           <SmoothScroll />
           <ScrollProgress />
           <Navbar />

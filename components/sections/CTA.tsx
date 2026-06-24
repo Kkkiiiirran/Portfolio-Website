@@ -12,11 +12,11 @@ export default function CTA() {
       <div className="absolute inset-0 bg-gradient-to-t from-accent/10 via-transparent to-transparent" />
       <div className="absolute inset-0 animated-grid opacity-20" />
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16 relative z-10">
         <Reveal>
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <motion.h2
-              className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold gradient-text"
+              className="page-title"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -26,7 +26,7 @@ export default function CTA() {
             </motion.h2>
 
             <motion.p
-              className="text-xl text-text-secondary max-w-2xl mx-auto"
+              className="page-subtitle max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

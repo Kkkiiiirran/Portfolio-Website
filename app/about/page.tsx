@@ -8,12 +8,12 @@ import { Award, Target, Heart, TrendingUp } from "lucide-react";
 export default function AboutPage() {
   return (
     <div className="pt-32 pb-20">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
         {/* Hero Section */}
         <Reveal>
           <div className="max-w-4xl mx-auto text-center mb-20">
             <motion.h1
-              className="text-5xl md:text-7xl font-heading font-bold gradient-text mb-6"
+              className="page-title"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -21,7 +21,7 @@ export default function AboutPage() {
               About Me
             </motion.h1>
             <motion.p
-              className="text-xl text-text-secondary"
+              className="page-subtitle"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -61,7 +61,7 @@ export default function AboutPage() {
 
             <Reveal delay={0.2}>
               <div className="relative">
-                <div className="aspect-square rounded-2xl overflow-hidden border-4 border-accent/20 shadow-2xl bg-gradient-to-br from-accent/20 to-purple-600/20">
+                <div className="profile-frame max-w-sm mx-auto">
                   <img
                     src="/images/profile/about.png"
                     alt="Kiranpreet Kaur"
@@ -77,7 +77,7 @@ export default function AboutPage() {
         {/* My Journey */}
         <section className="mb-32">
           <Reveal>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold gradient-text mb-12 text-center">
+            <h2 className="section-title">
               My Journey
             </h2>
           </Reveal>
@@ -108,7 +108,7 @@ export default function AboutPage() {
         {/* Mission & Values */}
         <section className="mb-32">
           <Reveal>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold gradient-text mb-12 text-center">
+            <h2 className="section-title">
               Mission & Values
             </h2>
           </Reveal>
@@ -151,7 +151,7 @@ export default function AboutPage() {
         {/* Education */}
         <section className="mb-32">
           <Reveal>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold gradient-text mb-12 text-center">
+            <h2 className="section-title">
               Education
             </h2>
           </Reveal>
@@ -178,7 +178,7 @@ export default function AboutPage() {
         {/* Goals */}
         <section>
           <Reveal>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold gradient-text mb-12 text-center">
+            <h2 className="section-title">
               Current Goals
             </h2>
           </Reveal>

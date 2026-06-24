@@ -9,9 +9,10 @@ interface MagneticButtonProps {
   className?: string;
   onClick?: () => void;
   href?: string;
+  size?: "default" | "sm";
 }
 
-export default function MagneticButton({ children, className, onClick, href }: MagneticButtonProps) {
+export default function MagneticButton({ children, className, onClick, href, size = "default" }: MagneticButtonProps) {
   const Component = href ? motion.a : motion.button;
   const props = href ? { href, target: "_blank", rel: "noopener noreferrer" } : { onClick };
 
@@ -19,7 +20,8 @@ export default function MagneticButton({ children, className, onClick, href }: M
     <Component
       {...props}
       className={cn(
-        "relative px-8 py-4 bg-accent hover:bg-accent-hover text-white font-heading font-semibold rounded-lg cursor-hover overflow-hidden group shadow-lg hover:shadow-xl transition-all duration-300",
+        "relative bg-accent hover:bg-accent-hover text-white font-heading font-semibold rounded-lg cursor-hover overflow-hidden group shadow-lg hover:shadow-xl transition-all duration-300",
+        size === "sm" ? "px-5 py-3 text-sm" : "px-8 py-4",
         className
       )}
       whileHover={{ scale: 1.05, y: -2 }}

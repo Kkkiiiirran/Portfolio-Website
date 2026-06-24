@@ -24,12 +24,12 @@ export default function SkillsPage() {
 
   return (
     <div className="pt-32 pb-20">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
         {/* Header */}
         <Reveal>
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.h1
-              className="text-5xl md:text-7xl font-heading font-bold gradient-text mb-6"
+              className="page-title"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -37,7 +37,7 @@ export default function SkillsPage() {
               Skills & Technologies
             </motion.h1>
             <motion.p
-              className="text-xl text-text-secondary"
+              className="page-subtitle"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}

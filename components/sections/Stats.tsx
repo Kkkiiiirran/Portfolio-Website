@@ -39,7 +39,7 @@ function Counter({ end, duration = 2 }: { end: number; duration?: number }) {
 export default function Stats() {
   return (
     <section className="py-20 relative">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <motion.div

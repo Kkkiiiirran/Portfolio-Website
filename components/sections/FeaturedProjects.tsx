@@ -12,12 +12,12 @@ export default function FeaturedProjects() {
 
   return (
     <section className="py-32 relative">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
         {/* Header */}
         <Reveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
             <div>
-              <h2 className="text-4xl md:text-6xl font-heading font-bold gradient-text mb-4">
+              <h2 className="home-section-title">
                 Featured Projects
               </h2>
               <p className="text-text-secondary text-lg max-w-2xl">

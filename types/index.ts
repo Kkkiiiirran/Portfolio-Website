@@ -26,6 +26,10 @@ export interface Experience {
   description: string;
   achievements: string[];
   technologies: string[];
+  links?: {
+    label: string;
+    url: string;
+  }[];
   logo?: string;
 }
 

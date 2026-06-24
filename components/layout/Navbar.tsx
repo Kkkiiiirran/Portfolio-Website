@@ -14,11 +14,9 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
+  { href: "/#competitive-programming", label: "Competitive Programming" },
   { href: "/certifications", label: "Certifications" },
-  { href: "/volunteering", label: "Volunteering" },
-  { href: "/skills", label: "Skills" },
   { href: "/testimonials", label: "Testimonials" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -46,7 +44,7 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="cursor-hover">
@@ -62,7 +60,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = !link.href.includes("#") && pathname === link.href;
               return (
                 <Link key={link.href} href={link.href} className="cursor-hover">
                   <motion.div
@@ -117,10 +115,10 @@ export default function Navbar() {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="container mx-auto px-6 py-8">
+            <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16 py-8">
               <div className="flex flex-col space-y-4">
                 {navLinks.map((link, index) => {
-                  const isActive = pathname === link.href;
+                  const isActive = !link.href.includes("#") && pathname === link.href;
                   return (
                     <motion.div
                       key={link.href}

@@ -6,6 +6,7 @@ import { Skill } from "@/types";
 interface SkillNodeProps {
   skill: Skill;
   index: number;
+  compact?: boolean;
 }
 
 const categoryColors = {
@@ -19,10 +20,10 @@ const categoryColors = {
   Languages: "from-indigo-500 to-purple-500",
 };
 
-export default function SkillNode({ skill, index }: SkillNodeProps) {
+export default function SkillNode({ skill, index, compact = false }: SkillNodeProps) {
   return (
     <motion.div
-      className="relative group cursor-hover"
+      className="relative group cursor-hover shrink-0"
       initial={{ opacity: 0, scale: 0 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
@@ -35,12 +36,12 @@ export default function SkillNode({ skill, index }: SkillNodeProps) {
     >
       {/* Skill Circle */}
       <div
-        className={`relative w-24 h-24 rounded-2xl bg-gradient-to-br ${
+        className={`relative ${compact ? "w-20 h-20" : "w-24 h-24"} rounded-2xl bg-gradient-to-br ${
           categoryColors[skill.category]
         } p-[2px] overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow`}
       >
         <div className="w-full h-full bg-card rounded-2xl flex flex-col items-center justify-center gap-1">
-          <span className="text-xs font-heading font-bold text-center px-2">
+          <span className={`${compact ? "text-[11px]" : "text-xs"} font-heading font-bold text-center px-2`}>
             {skill.name}
           </span>
           <span className="text-[10px] text-text-secondary font-semibold">{skill.level}%</span>

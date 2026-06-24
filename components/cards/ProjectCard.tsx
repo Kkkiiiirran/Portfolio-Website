@@ -21,19 +21,33 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     >
       {/* Image Placeholder */}
       <Link href={`/projects/${project.slug}`}>
-        <div className="relative h-64 bg-gradient-to-br from-purple-900/20 to-blue-900/20 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(124,58,237,0.1),transparent_50%)]" />
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent"
-            initial={{ scale: 1 }}
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-6xl font-heading font-bold text-white/5">
-              {project.title.charAt(0)}
-            </span>
-          </div>
+        <div className="relative h-48 sm:h-52 bg-gradient-to-br from-purple-900/20 to-blue-900/20 overflow-hidden">
+          {project.image ? (
+            <motion.img
+              src={project.image}
+              alt={`${project.title} preview`}
+              className="h-full w-full object-cover"
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            />
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(124,58,237,0.1),transparent_50%)]" />
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent"
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-6xl font-heading font-bold text-white/5">
+                  {project.title.charAt(0)}
+                </span>
+              </div>
+            </>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
         </div>
       </Link>
 

@@ -58,6 +58,25 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
           </ul>
         </div>
 
+        {experience.links && experience.links.length > 0 && (
+          <div className="space-y-2">
+            <h4 className="font-heading font-semibold text-sm">Featured Articles:</h4>
+            <div className="flex flex-col gap-2">
+              {experience.links.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-accent hover:text-purple-400 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 pt-2">
           {experience.technologies.map((tech) => (

@@ -8,12 +8,12 @@ import GlassCard from "@/components/ui/GlassCard";
 export default function VolunteeringPage() {
   return (
     <div className="pt-32 pb-20">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16">
         {/* Header */}
         <Reveal>
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.h1
-              className="text-5xl md:text-7xl font-heading font-bold gradient-text mb-6"
+              className="page-title"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -21,7 +21,7 @@ export default function VolunteeringPage() {
               Volunteering
             </motion.h1>
             <motion.p
-              className="text-xl text-text-secondary"
+              className="page-subtitle"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -39,7 +39,7 @@ export default function VolunteeringPage() {
                 {/* Image Placeholder - Alternating sides */}
                 <div className={`order-2 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
                   <motion.div
-                    className="aspect-video rounded-2xl bg-gradient-to-br from-accent/20 to-purple-600/20 border border-border overflow-hidden"
+                    className="media-frame"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
